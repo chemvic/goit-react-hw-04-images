@@ -8,26 +8,23 @@ const modalRoot = document.querySelector('#modal-root');
 
 const Modal = ({image, tags, onClose})=>{
 
-
-    useEffect(()=>{window.addEventListener('keydown', handleEscCatch)},[]);
-
- 
-    useEffect(()=>{return ()=>{window.removeEventListener('keydown',handleEscCatch)}},[]);
-
-   const handleEscCatch=(event)=>{
-     
-      if(event.code==='Escape'){
+    useEffect(()=>{
+      const handleEscCatch=(event)=>{
+        if(event.code==='Escape'){
         onClose();
       }
-    }
+    };
+    window.addEventListener('keydown', handleEscCatch);
+      
+      return ()=>{window.removeEventListener('keydown',handleEscCatch)}},[onClose]);
+
+   
    const  handleOverlayClick=(event)=>{
       if(event.currentTarget===event.target){
         onClose();
       }
     }
   
-  
-
 
 return createPortal(
   <div className={css.overlay} onClick={handleOverlayClick}>
