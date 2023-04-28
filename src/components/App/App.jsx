@@ -21,7 +21,6 @@ class App extends Component {
     isLoading:false, 
     total: 0,
     error: null, 
-
   };
 
   async componentDidUpdate(_, prevState) { 
