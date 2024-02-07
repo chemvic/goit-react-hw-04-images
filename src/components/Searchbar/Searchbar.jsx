@@ -32,7 +32,7 @@ const Searchbar = ({onSubmit})=> {
         <header className={css.searchbar}>
   <form className={css.searchForm} onSubmit={handleSubmit}>
     <button type="submit" className={css.searchFormButton}>
-        <FaSearch  style={{color: "#84868b",}}/>
+        <FaSearch  style={{color: "#0077cc",}}/>
     </button>
 
     <input
